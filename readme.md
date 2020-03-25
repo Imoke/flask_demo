@@ -21,7 +21,7 @@ In VS Code, open the Command Palette (View > Command Palette or (⇧⌘P)). Then
 `gunicorn hello_app.webapp:app -c gunicorn.conf.py`
 
 4.打包镜像
-
+`pip freeze > requirements.txt`
 `sudo docker build -t 'flask_app' .`
 
 5.运行镜像
