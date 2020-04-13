@@ -18,7 +18,7 @@ In VS Code, open the Command Palette (View > Command Palette or (⇧⌘P)). Then
 
 3.运行程序
 
-`gunicorn hello_app.webapp:app -c gunicorn.conf.py`
+`gunicorn package.webapp:webapp -c gunicorn.conf.py`
 
 4.打包镜像
 `pip freeze > requirements.txt`
