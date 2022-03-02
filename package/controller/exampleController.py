@@ -1,4 +1,4 @@
-from package.base.app import webapp, commonBp, nacosClient, apolloClient
+from package.base.app import webapp, commonBp, apolloClient
 from package.models.shelfModal import ShelfModel
 from package.services.bookServices import BookService
 
@@ -41,11 +41,6 @@ def shelfWithBbooks():
 @commonBp.route("/shelfbooks/<id>")
 def shelfWithBooksById(id):
     return ShelfModel.getShelfWithBooks(id)
-
-# example for remote call
-@commonBp.route("/nodejs")
-def nodejs():
-    return nacosClient.remoteCall("nodejs.test.domain", '/')
 
 # exmaple for get apollo value
 @commonBp.route("/hello/<name>")

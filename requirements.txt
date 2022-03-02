@@ -11,7 +11,7 @@ marshmallow==3.5.1
 Marshmallow-Peewee==3.0.0
 nacos-sdk-python==0.1.1
 peewee==3.13.1
-psycopg2==2.8.4
+#psycopg2==2.8.4
 pycodestyle==2.5.0
 PyYAML==5.3.1
 requests==2.23.0
