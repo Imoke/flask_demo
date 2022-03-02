@@ -1,29 +1,60 @@
-https://code.visualstudio.com/docs/python/python-tutorial
+# 项目 Setup
 
-1.安装虚拟环境
+## 第一步：Install virtual env
 
 ```
-# macOS/Linux
-sudo apt-get install python3-venv    # If needed
-python3 -m venv env
 # Windows
 python -m venv env
 ```
 
-In VS Code, open the Command Palette (View > Command Palette or (⇧⌘P)). Then select the Python: Select Interpreter command
+## 第二步 进入虚拟环境（后面的命名都必须在虚拟环境的 shell 中进行）
 
-2.安装需要的包
+vscode
+ctrl+shift+p Python: Select Interpreter 选择当前 env 中的环境
 
-`pip install -r requirements.txt`
+vscdoe
 
-3.运行程序
+```
+ctrl + ~
+```
 
-`gunicorn package.webapp:webapp -c gunicorn.conf.py`
+window 注意必须是 cmd 不能 powershell
 
-4.打包镜像
-`pip freeze > requirements.txt`
-`sudo docker build -t 'flask_app' .`
+```
+env\Scripts\activate.bat
+```
 
-5.运行镜像
+Linux
 
-`docker run -p 9006:9006 flask_app`
+```
+source env/bin/activate
+```
+
+## 第三步 Install dependence
+
+```
+pip install -r requirements.txt
+```
+
+## 第四步（可选） Freeze dependence
+
+在安装新的依赖后，必须冻结依赖并且提交 requirements.txt 到 git 中，以便其他同事同步安装此依赖
+
+```
+pip freeze > requirements.txt
+```
+
+## 第五步 Run app
+
+Window
+
+```
+set FLASK_APP=package.run
+py -m flask run
+```
+
+Linux
+
+```
+export set FLASK_APP=package.run
+```

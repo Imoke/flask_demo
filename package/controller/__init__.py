@@ -1,3 +1,2 @@
-from .example import *
-from .view import *
-from .apScheduler import *
+# -*- coding: utf-8 -*-
+from .exampleController import *

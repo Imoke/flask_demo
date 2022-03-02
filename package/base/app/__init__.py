@@ -1,2 +1,2 @@
-from .app import webapp, scheduler
-from .app import helloBp, viewBp
+# -*- coding: utf-8 -*-
+from .app import webapp, commonBp, nacosClient, apolloClient
