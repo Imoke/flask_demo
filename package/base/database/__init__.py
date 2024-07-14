@@ -17,7 +17,7 @@ if os.environ.get('FLASK_ENV') == 'development':
 # 会被存入webapp.config供FlaskDB使用
 # DATABASE = 'postgresql://pgsql:Dpp-pgsql123%23%23@pgsql-service.platform:5432/testdb'
 
-DATABASE = { "name":"testdb",
+DATABASE = { "name":"pgsql",
              "engine": "PostgresqlDatabase",
              "user": "pgsql",
              "password": "Dpp-pgsql123##",

@@ -6,4 +6,4 @@ from package.base.database import *
 from package.controller import *
 
 # 蓝图必须放在所有视图后面注册
-webapp.register_blueprint(blueprint=commonBp, url_prefix='/kpi')
+webapp.register_blueprint(blueprint=commonBp, url_prefix='/rcd')

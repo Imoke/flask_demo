@@ -8,11 +8,11 @@ from flask import Flask, Blueprint
 
 webapp = Flask(__name__)
 
-commonBp = Blueprint('kpi', __name__)
+commonBp = Blueprint('rcd', __name__)
 
 NACOS_SERVER_ADDRESSES = "ofm-nacos-0.discovery-nacos.app.svc.cluster.local:8848"
 NACOS_NAMESPACE = "public"
-NACOS_SERVICE_NAME = "ofm-py-kpi-service"
+NACOS_SERVICE_NAME = "ofm-py-rcd-service"
 NACOS_INSTANCE_IP = "127.0.0.1"
 NACOS_INSTANCE_PORT = "5000"
 
