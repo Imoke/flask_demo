@@ -19,7 +19,7 @@ def generate_fault():
     return phenomenon[:40]  # 保证不超过 30 个字
 
 # 生成500条故障现象
-faults = [generate_fault() for _ in range(500)]
+faults = [generate_fault() for _ in range(5000)]
 
 # 将故障现象写入文件
 output_file = 'fault_phenomena.txt'

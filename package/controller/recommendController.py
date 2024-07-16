@@ -13,7 +13,8 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 app = Flask(__name__)
 modelsDir = os.path.abspath(os.path.join(__file__, '../../../models'))
-miniLM = os.path.join(modelsDir, 'bert-base-chinese')
+## miniLM = os.path.join(modelsDir, 'bert-base-chinese')
+miniLM = os.path.join(modelsDir, 'miniLM-L12-v2')
 # 加载预训练模型和分词器
 tokenizer = AutoTokenizer.from_pretrained(miniLM)
 model = AutoModel.from_pretrained(miniLM)
@@ -24,7 +25,7 @@ ids = []
 index = None
 
 def embed_text(text):
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=128)
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=64)
     with torch.no_grad():
         outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
@@ -54,7 +55,6 @@ def train():
             embeddings.append(embed_text(text))
 
     embeddings = np.array(embeddings).astype("float32")
-
     # 构建Faiss索引
     index = faiss.IndexFlatL2(embeddings.shape[1])
     index.add(embeddings)
